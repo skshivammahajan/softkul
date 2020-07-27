@@ -1,0 +1,41 @@
+{% load static %}
+2  <!doctype html>
+3  <html>
+4    <head>
+5      <meta charset="utf-8">
+6      <title>
+7        {% block title %}
+8        {{ page_title|default:"Untitled Page" }}
+9        {% endblock title %}
+10     </title>
+11     <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+12   </head>
+13   <body>
+14     <div id="wrapper">
+15     <header id="header">
+16       <div id="logo"><img src="{% static 'logo.png' %}" alt="" /></div>
+17       <div id="top_menu">Home | Calendar | About | Contact</div>
+18       <div id="topbanner"><img src="{% static 'top_banner.jpg' %}" alt="" /></div>
+19     </header>
+20     <aside id="rightsidebar">
+21       <nav id="nav">
+22       <ul>
+23         <li>Menu 1</li>
+24         <li>Menu 2</li>
+25         <li>Menu 3</li>
+26       </ul>
+27       </nav>
+28     </aside>
+29     <section id="main">
+30       {% block content %}
+31       <p>Placeholder text in base template. Replace with page content.</p>
+32       {% endblock content %}
+33     </section>
+34     <footer id="footer">Copyright &copy;
+35       <script type="text/JavaScript">
+36       document.write(new Date().getFullYear());
+37       </script> MyClub
+38     </footer>
+39     </div>
+40   </body>
+41 </html>
